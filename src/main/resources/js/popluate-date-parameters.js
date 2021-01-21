@@ -1,4 +1,4 @@
-AJS.MacroBrowser.setMacroJsOverride("Countdown Days Until", {
+AJS.MacroBrowser.setMacroJsOverride("countdown-days-until", {
     fields: {
         enum: {
             "Day": function(param, options) {

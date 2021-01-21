@@ -21,9 +21,9 @@
         <context>countdown</context>
     </web-resource>
 
-    <xhtml-macro name="Countdown Days Until" class="wiki.uqracing.macro.countdown" key="countdown">
-        <description key="countdown.macro.desc" />
+    <xhtml-macro name="countdown-days-until" class="wiki.uqracing.macro.countdown" key="countdown">
         <category name="admin" />
+        <description key="wiki.uqracing.macro.countdown.desc"/>
         <parameters>
             <parameter name="Event" type="string" />
             <parameter name="Year" type="enum" required="true" />
