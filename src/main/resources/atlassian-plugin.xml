@@ -1,0 +1,41 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="countdown"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="countdown-resources" name="countdown Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="countdown.css" location="/css/countdown.css"/>
+        <resource type="download" name="countdown.js" location="/js/countdown.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>countdown</context>
+    </web-resource>
+
+    <xhtml-macro name="Countdown Days Until" class="wiki.uqracing.macro.countdown" key="countdown">
+        <description key="countdown.macro.desc" />
+        <category name="admin" />
+        <parameters>
+            <parameter name="Event" type="string" />
+            <parameter name="Year" type="enum" required="true" />
+            <parameter name="Month" type="enum" required="true"/>
+            <parameter name="Day" type="enum" required="true" />
+        </parameters>
+    </xhtml-macro>
+
+    <web-resource key="popluate-date-parameters" name="Populate the date parameters">
+        <resource type="download" name="popluate-date-parameters.js" location="js/popluate-date-parameters.js" />
+        <dependency>confluence.editor.actions:editor-macro-browser</dependency>
+        <context>macro-browser</context>
+    </web-resource>
+    
+</atlassian-plugin>
