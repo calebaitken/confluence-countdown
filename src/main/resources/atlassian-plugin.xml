@@ -9,6 +9,7 @@
 
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="countdown"/>
+    <resource type="download" name="images/" location="/images"/>
     
     <!-- add our web resources -->
     <web-resource key="countdown-resources" name="countdown Web Resources">
@@ -16,12 +17,12 @@
         
         <resource type="download" name="countdown.css" location="/css/countdown.css"/>
         <resource type="download" name="countdown.js" location="/js/countdown.js"/>
-        <resource type="download" name="images/" location="/images"/>
-
+        
         <context>countdown</context>
     </web-resource>
 
-    <xhtml-macro name="countdown-days-until" class="wiki.uqracing.macro.countdown" key="countdown">
+    <xhtml-macro name="countdown-days-until" class="wiki.uqracing.macro.countdown" key="countdown"
+                icon="/download/resources/${atlassian.plugin.key}/images/UQR_Logo_Colour.png">
         <category name="admin" />
         <description key="wiki.uqracing.macro.countdown.desc"/>
         <parameters>
